@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Shri Saraswati Vidya Mandir | Mandli, Balotra</title>
+    <!-- Google Fonts + Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fefcf5;
+            color: #1e2a2f;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+        }
+
+        /* container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* header / navbar */
+        .navbar {
+            background: #ffffffdd;
+            backdrop-filter: blur(12px);
+            background-color: rgba(255, 255, 245, 0.95);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #f0e3c9;
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 16px 0;
+        }
+
+        .logo-area h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #b4532b;
+            letter-spacing: -0.3px;
+        }
+
+        .logo-area p {
+            font-size: 0.8rem;
+            color: #7b5a3e;
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #2c3a2f;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #c75c2e;
+        }
+
+        /* buttons / hero */
+        .hero {
+            background: linear-gradient(105deg, #fff7ed 0%, #feeed6 100%);
+            padding: 60px 0 50px;
+            border-bottom-left-radius: 32px;
+            border-bottom-right-radius: 32px;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text {
+            flex: 1.2;
+        }
+
+        .hero-text h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #a2431d;
+            line-height: 1.2;
+        }
+
+        .hero-text .tagline {
+            font-size: 1.2rem;
+            color: #5a3e2b;
+            margin: 20px 0 10px;
+            border-left: 4px solid #e07c3c;
+            padding-left: 18px;
+        }
+
+        .contact-details {
+            background: white;
+            padding: 18px 24px;
+            border-radius: 32px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin-top: 28px;
+            display: inline-block;
+        }
+
+        .contact-details p {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+        }
+
+        .hero-img {
+            flex: 0.9;
+            text-align: center;
+        }
+
+        .hero-img img {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 48px;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.2);
+            object-fit: cover;
+            aspect-ratio: 1 / 0.9;
+        }
+
+        /* section styling */
+        section {
+            padding: 70px 0;
+            border-bottom: 1px solid #f0e2cf;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #b7552e;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: #e6bc8b;
+            border-radius: 4px;
+        }
+
+        .grid-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 24px;
+            flex: 1 1 260px;
+            box-shadow: 0 12px 28px -8px rgba(0,0,0,0.08);
+            transition: transform 0.2s;
+            border: 1px solid #f3e7d9;
+        }
+        .card:hover { transform: translateY(-6px); }
+        .card i {
+            font-size: 2.2rem;
+            color: #d47a3b;
+            margin-bottom: 16px;
+        }
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+        }
+
+        /* gallery style */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+        }
+        .gallery-item {
+            flex: 1 1 280px;
+            border-radius: 28px;
+            overflow: hidden;
+            background: #fff3e6;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: 0.3s;
+        }
+        .gallery-item:hover img { transform: scale(1.02); }
+        .gallery-caption {
+            padding: 16px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* contact page style */
+        .contact-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+        }
+        .contact-info {
+            flex: 1;
+            background: #fffaf2;
+            padding: 32px;
+            border-radius: 36px;
+        }
+        .contact-form {
+            flex: 1;
+            background: white;
+            padding: 32px;
+            border-radius: 36px;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 12px 18px;
+            border: 1px solid #e2cfb5;
+            border-radius: 48px;
+            font-family: inherit;
+            background: #fefcf8;
+        }
+        textarea {
+            border-radius: 28px;
+            resize: vertical;
+        }
+        .btn {
+            background-color: #c36130;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn:hover { background-color: #a54a20; }
+
+        /* legal pages (privacy, terms) */
+        .legal-card {
+            background: white;
+            border-radius: 32px;
+            padding: 40px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+        }
+        .legal-card h3 {
+            margin-top: 24px;
+            margin-bottom: 12px;
+            color: #b7552e;
+        }
+        .legal-card p {
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        /* footer */
+        footer {
+            background: #1f2e24;
+            color: #ecdbba;
+            padding: 40px 0 20px;
+        }
+        .footer-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+        .footer-col {
+            flex: 1;
+            min-width: 180px;
+        }
+        .footer-col h4 {
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+            color: #ffdfb3;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #3c4e3a;
+            padding-top: 24px;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-flex { flex-direction: column; gap: 16px; }
+            .hero-text h2 { font-size: 2rem; }
+            .container { padding: 0 20px; }
+            section { padding: 50px 0; }
+        }
+        i, .fas, .far { margin-right: 6px; }
+        a { text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container nav-flex">
+            <div class="logo-area">
+                <h1><i class="fas fa-school"></i> Shri Saraswati Vidya Mandir</h1>
+                <p>Senior Secondary School | Mandli, Balotra</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+                <li><a href="#terms">Terms</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero / Home section -->
+    <section id="home" style="padding-top: 0;">
+        <div class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h2>श्री सरस्वती शिक्षा <br> संस्कार और उत्कृष्टता</h2>
+                    <div class="tagline"><i class="fas fa-graduation-cap"></i> Affiliated to Rajasthan Board | Since 1995</div>
+                    <div class="contact-details">
+                        <p><i class="fas fa-phone-alt"></i> +91 7976545260</p>
+                        <p><i class="fas fa-envelope"></i> ssvmorg@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Kalyanpur, Balotra, Rajasthan - 344026</p>
+                        <p><i class="fas fa-location-dot"></i> Mandli, Near Bus Stand, Balotra, RJ</p>
+                    </div>
+                </div>
+                <div class="hero-img">
+                    <!-- school picture placeholder + aesthetic -->
+                    <img src="https://placehold.co/600x500/f3e1cf/9b4a2c?text=SHRI+SARASWATI+VIDYA+MANDIR&font=playfair" alt="School building preview">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About section with images and details -->
+    <div class="container" id="about">
+        <section>
+            <h2 class="section-title"><i class="fas fa-landmark"></i> About Our School</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+                <div style="flex: 1.5;">
+                    <p style="font-size: 1.1rem; margin-bottom: 20px;">Shri Saraswati Senior Secondary Vidya Mandir, Mandli (Balotra) is a renowned educational institution committed to holistic development, blending modern pedagogy with traditional values. Our campus in Kalyanpur, Rajasthan fosters academic excellence, sports, arts and moral education.</p>
+                    <p style="margin-bottom: 20px;">With state-of-the-art laboratories, a vast library, and dedicated faculty, we empower students to excel in board examinations and life skills. We believe in "Vidya Dadati Vinayam" — knowledge brings humility.</p>
+                    <div style="display: flex; gap: 16px; flex-wrap: wrap; margin: 24px 0;">
+                        <span style="background:#e7cfb5; padding: 8px 20px; border-radius: 40px;"><i class="fas fa-users"></i> 1500+ Students</span>
+                        <span style="background:#e7cfb5; padding: 8px 20px; border-radius: 40px;"><i class="fas fa-chalkboard-user"></i> 60+ Teachers</span>
+                        <span style="background:#e7cfb5; padding: 8px 20px; border-radius: 40px;"><i class="fas fa-trophy"></i> 20+ Awards</span>
+                    </div>
+                </div>
+                <div style="flex: 1;">
+                    <img src="https://placehold.co/500x350/e9d7c2/8b4c2c?text=Classroom+Excellence" style="width:100%; border-radius: 32px; object-fit: cover; box-shadow: 0 12px 24px rgba(0,0,0,0.1);" alt="classroom">
+                </div>
+            </div>
+            <div class="grid-cards" style="margin-top: 48px;">
+                <div class="card"><i class="fas fa-book-open"></i><h3>Smart Library</h3><p>10,000+ books, e-resources & reading zones.</p></div>
+                <div class="card"><i class="fas fa-flask"></i><h3>Science Labs</h3><p>Physics, Chemistry, Bio labs with advanced equipment.</p></div>
+                <div class="card"><i class="fas fa-laptop-code"></i><h3>Digital Classrooms</h3><p>Smart boards & computer education from grade 3.</p></div>
+                <div class="card"><i class="fas fa-futbol"></i><h3>Sports Complex</h3><p>Cricket, kabaddi, athletics, yoga & indoor games.</p></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Gallery Section with pictures -->
+    <div class="container" id="gallery">
+        <section>
+            <h2 class="section-title"><i class="fas fa-images"></i> Campus Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://placehold.co/400x300/e2cfb3/a55129?text=School+Building" alt="School Building">
+                    <div class="gallery-caption">Main Building | Mandli Campus</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/400x300/dbc39e/bd5a2e?text=Annual+Cultural+Fest" alt="Annual Fest">
+                    <div class="gallery-caption">Saraswati Vandana & Annual Fest</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/400x300/eedbc2/9c4626?text=Computer+Lab" alt="Computer Lab">
+                    <div class="gallery-caption">Advanced Computer Lab</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://placehold.co/400x300/f3e3cf/a84721?text=Sports+Day" alt="Sports Day">
+                    <div class="gallery-caption">Sports Meet 2024</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 32px; font-style: italic;">"Discipline, Dedication & Determination" – Our school spirit</p>
+        </section>
+    </div>
+
+    <!-- Contact Page (Separate section) -->
+    <div class="container" id="contact">
+        <section>
+            <h2 class="section-title"><i class="fas fa-address-card"></i> Contact Us</h2>
+            <div class="contact-flex">
+                <div class="contact-info">
+                    <h3><i class="fas fa-school"></i> Shri Saraswati Sen Sec Vidya Mandir</h3>
+                    <p><i class="fas fa-map-pin"></i> Kalyanpur, Mandli, Balotra, Rajasthan - 344026</p>
+                    <p><i class="fas fa-phone"></i> 7976545260 , 02988-250123 (Office)</p>
+                    <p><i class="fas fa-envelope"></i> ssvmorg@gmail.com</p>
+                    <p><i class="fas fa-clock"></i> Office Hours: Mon-Sat 8:00 AM – 4:00 PM</p>
+                    <hr style="margin: 20px 0; border-color:#ecdbba;">
+                    <p><strong>Principal’s Desk:</strong> For admission & queries feel free to visit campus.</p>
+                    <div style="margin-top: 20px;">
+                        <iframe src="https://maps.google.com/maps?q=Balotra+Rajasthan+344026&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="180" style="border:0; border-radius: 24px;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane"></i> Send Message</h3>
+                    <form id="demoForm">
+                        <div class="form-group"><input type="text" placeholder="Full Name" required></div>
+                        <div class="form-group"><input type="email" placeholder="Email Address" required></div>
+                        <div class="form-group"><input type="tel" placeholder="Phone Number"></div>
+                        <div class="form-group"><textarea rows="4" placeholder="Your query / feedback..."></textarea></div>
+                        <button type="submit" class="btn">Submit Inquiry <i class="fas fa-arrow-right"></i></button>
+                        <p style="font-size: 0.75rem; margin-top: 12px;">*We’ll revert within 24 hours.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Privacy Policy Section -->
+    <div class="container" id="privacy">
+        <section>
+            <h2 class="section-title"><i class="fas fa-shield-alt"></i> Privacy Policy</h2>
+            <div class="legal-card">
+                <p>Last updated: April 2026 — Shri Saraswati Sen Sec Vidya Mandir Mandli respects your privacy. This Privacy Policy outlines how we collect, use, and protect any personal information provided through our website or physical records.</p>
+                <h3>Information Collection</h3>
+                <p>We collect student and parent details (name, contact, academic records) solely for admission, communication, and academic management. Browsing data (anonymous) may be used for site improvement.</p>
+                <h3>Use of Information</h3>
+                <p>Personal data is used to provide educational services, notify about events, and share academic progress. We never sell or rent data to third parties.</p>
+                <h3>Data Security</h3>
+                <p>We implement secure systems and restrict access to authorized staff only. For any privacy concerns, contact our administrative office at ssvmorg@gmail.com.</p>
+                <h3>Cookies</h3>
+                <p>Our website uses essential cookies to enhance user experience. By using the site, you consent to basic cookies.</p>
+                <p><i class="fas fa-gavel"></i> This policy may be updated occasionally, please review periodically.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Terms and Conditions Section -->
+    <div class="container" id="terms">
+        <section>
+            <h2 class="section-title"><i class="fas fa-file-contract"></i> Terms & Conditions</h2>
+            <div class="legal-card">
+                <p>Welcome to the official website of Shri Saraswati Senior Secondary Vidya Mandir, Mandli. By accessing this site, you agree to abide by the following terms.</p>
+                <h3>Use of Content</h3>
+                <p>All school logos, images, and educational material are property of the institution. Unauthorized reproduction is prohibited. Information provided is for general reference; school reserves rights to modify schedules, fee structure, or policies.</p>
+                <h3>Admission Terms</h3>
+                <p>Admission is subject to eligibility, seat availability, and payment of prescribed fees. Any dispute regarding admissions or conduct will be under Balotra jurisdiction.</p>
+                <h3>Code of Conduct</h3>
+                <p>Students, parents, and staff must adhere to school's code of conduct. Online communication should be respectful. The school may suspend access for misuse.</p>
+                <h3>Limitation of Liability</h3>
+                <p>We are not liable for any technical issues or third-party links displayed. Parents/guardians are responsible for verifying updates from school office.</p>
+                <p>For full terms and conditions booklet, contact school administration. © Shri Saraswati Vidya Mandir.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer with Copyright & Quick Links -->
+    <footer>
+        <div class="container">
+            <div class="footer-flex">
+                <div class="footer-col">
+                    <h4><i class="fas fa-school"></i> SSVM Mandli</h4>
+                    <p>Empowering young minds with values and knowledge since 1995.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Kalyanpur, Balotra, RJ 344026</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <p><a href="#home" style="color:#e9cba7;">Home</a></p>
+                    <p><a href="#about" style="color:#e9cba7;">About</a></p>
+                    <p><a href="#gallery" style="color:#e9cba7;">Gallery</a></p>
+                    <p><a href="#contact" style="color:#e9cba7;">Contact</a></p>
+                    <p><a href="#privacy" style="color:#e9cba7;">Privacy</a></p>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> 7976545260</p>
+                    <p><i class="fas fa-envelope"></i> ssvmorg@gmail.com</p>
+                    <p><i class="fab fa-whatsapp"></i> +91 7976545260 (For Enquiry)</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <p><i class="fab fa-facebook"></i> Facebook | <i class="fab fa-instagram"></i> Instagram</p>
+                    <p><i class="fab fa-youtube"></i> YouTube Channel</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Shri Saraswati Sen Sec Vidya Mandir Mandli, Balotra. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color:#e2a476;"></i> for Education.
+            </div>
+        </div>
+    </footer>
+
+    <!-- simple form alert -->
+    <script>
+        document.getElementById('demoForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Our school team will contact you soon. 🙏 Jai Saraswati Mata');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
